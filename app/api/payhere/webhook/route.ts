@@ -8,5 +8,5 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const payHere = new PayHere(body);
   await payHere.save();
-  NextResponse.json("success");
+  return NextResponse.json("success");
 }
