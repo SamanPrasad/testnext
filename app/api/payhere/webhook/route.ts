@@ -5,8 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   await connectDB();
+  console.log(req);
   // const body = await req.json();
-  console.log("hook called");
   // const payHere = new PayHere(body);
   // await payHere.save();
   return NextResponse.json("success");
