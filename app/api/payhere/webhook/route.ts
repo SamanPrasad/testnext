@@ -1,9 +1,12 @@
+import { connectDB } from "@/lib/dataSource";
+import { PayHere } from "@/lib/models/PayHere";
 import { redirect } from "next/navigation";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
+  await connectDB();
   const body = await req.json();
-  redirect(
-    `/payhere?merchant_id=${body.merchant_id}&status_message=${body.status_message}`
-  );
+  const payHere = new PayHere(body);
+  await payHere.save();
+  NextResponse.json("success");
 }
