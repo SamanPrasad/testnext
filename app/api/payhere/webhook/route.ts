@@ -5,10 +5,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   await connectDB();
-  console.log(req);
-  const body = await req.json();
-  console.log(body);
-  const payHere = new PayHere(body);
+  const params = new URLSearchParams(await req.text());
+  const jsobObj = Object.fromEntries(params.entries());
+  const payHere = new PayHere(jsobObj);
   await payHere.save();
   return NextResponse.json("success");
 }

@@ -7,6 +7,8 @@ const payHereSchema = new Schema({
   status_code: String,
   status_message: String,
   method: String,
+  card_holder_name: String,
+  card_no: String,
 });
 
 export const PayHere =
