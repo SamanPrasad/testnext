@@ -6,7 +6,8 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   await connectDB();
   const body = await req.json();
-  const payHere = new PayHere(body);
-  await payHere.save();
+  console.log(body);
+  // const payHere = new PayHere(body);
+  // await payHere.save();
   return NextResponse.json("success");
 }
