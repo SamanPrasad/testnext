@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const checkoutSchema = new mongoose.Schema({
-  id: Number,
+  id: String,
   object: String,
   type: String,
   data: {
