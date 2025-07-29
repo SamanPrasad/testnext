@@ -38,6 +38,7 @@ export async function POST(req: NextRequest) {
       //   },
     ],
     mode: "payment",
+    customer_creation: "if_required",
     success_url:
       "https://payhereclient.vercel.app?sessionId={CHECKOUT_SESSION_ID}",
     cancel_url: "https://payhereclient.vercel.app?status=cancel",
