@@ -2,8 +2,7 @@ import { NextRequest } from "next/server";
 import md5 from "crypto-js/md5";
 
 export async function POST() {
-  const merchantSecret =
-    "MzUyNzI4MzUzMDI4NDUzODk2MjYyMjc3NjYxOTYzMjYzOTkzNTA2MQ==";
+  const merchantSecret = process.env.MERCHANT_SECRET as string;
   const merchantId = "1231349";
   const orderId = "12345";
   const amount = "1000";

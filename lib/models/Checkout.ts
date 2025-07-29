@@ -6,8 +6,9 @@ const checkoutSchema = new mongoose.Schema({
   data: {
     object: {
       id: String,
-      currency: String,
+      customer_email: String,
       customer: String,
+      currency: String,
       mode: String,
       status: String,
       success_url: String,

@@ -45,8 +45,9 @@ export async function POST(req: NextRequest) {
       data: {
         object: {
           id: session.id,
-          currency: session.currency,
+          customer_email: session.customer_email,
           customer: session.customer,
+          currency: session.currency,
           mode: session.mode,
           status: session.status,
           success_url: session.success_url,
