@@ -5,6 +5,7 @@ export async function POST(req: NextRequest) {
   const stripe = createStripe();
 
   const session = await stripe.checkout.sessions.create({
+    payment_method_types: ["card", "amazon_pay"],
     line_items: [
       {
         price_data: {
