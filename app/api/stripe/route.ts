@@ -37,7 +37,8 @@ export async function POST(req: NextRequest) {
       //   },
     ],
     mode: "payment",
-    success_url: "https://payhereclient.vercel.app?status=success",
+    success_url:
+      "https://payhereclient.vercel.app?sessionId={CHECKOUT_SESSION_ID}",
     cancel_url: "https://payhereclient.vercel.app?status=cancel",
     metadata: {
       user_name: "Jerome Valeska",
