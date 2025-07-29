@@ -6,7 +6,7 @@ import Stripe from "stripe";
 
 export const config = {
   api: {
-    bodyParser: false,
+    bodyParser: true,
   },
 };
 
