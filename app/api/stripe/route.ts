@@ -2,7 +2,6 @@ import { createStripe } from "@/lib/payment/stripe";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const body = await req.json();
   const stripe = createStripe();
 
   const session = await stripe.checkout.sessions.create({
@@ -38,7 +37,6 @@ export async function POST(req: NextRequest) {
       //   },
     ],
     mode: "payment",
-    customer_email: body.email,
     success_url: "https://payhereclient.vercel.app?status=success",
     cancel_url: "https://payhereclient.vercel.app?status=cancel",
     metadata: {
