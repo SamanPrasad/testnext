@@ -48,6 +48,8 @@ export async function POST(req: NextRequest) {
           currency: session.currency,
           customer: session.customer,
           mode: session.mode,
+          status: session.status,
+          success_url: session.success_url,
           metadata: {
             user_name: session.metadata?.user_name,
           },
