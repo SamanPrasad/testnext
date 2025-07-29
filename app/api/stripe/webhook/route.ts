@@ -36,6 +36,8 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  console.log(event);
+
   if (event.type == "checkout.session.completed") {
     await connectDB();
     const session = event.data.object;
